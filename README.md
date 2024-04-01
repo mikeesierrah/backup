@@ -33,28 +33,21 @@
 <p align="left">First, you run this command on your server<br><br></p> 
 
 ```bash
-bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
+bash <(curl -Ls https://github.com/mikeesierrah/backup/raw/main/backup.sh)
 ``` 
 
 ###
 
-<h3 align="left">Step 2 : Token setting</h3>
+<h3 align="left">Step 2 : Webhook setting</h3>
 
 ###
 
-<p align="left">Then it asks us for bot token, you have to create a bot from https://t.me/BotFather and give the token</p>
+<p align="left">Then it asks us for Webhook/p>
+
 
 ###
 
-<h3 align="left">Step 3: Set chat id</h3>
-
-###
-
-<p align="left">Then it asks us for a chat ID, and to get your chat ID or the channel you set aside for backup, you must forward a message from yourself or the channel to this https://t.me/userinfobot bot, which will give you a chat ID.</p>
-
-###
-
-<h3 align="left">Step 4 : Caption setting</h3>
+<h3 align="left">Step 3 : Caption setting</h3>
 
 ###
 
@@ -62,7 +55,7 @@ bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 
 ###
 
-<h3 align="left">Step 5 : Cronjob setting</h3>
+<h3 align="left">Step 4 : Cronjob setting</h3>
 
 ###
 
@@ -70,7 +63,7 @@ bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 
 ###
 
-<h3 align="left">Step 6 : Panel selection</h3>
+<h3 align="left">Step 5 : Panel selection</h3>
 
 ###
 
@@ -78,7 +71,7 @@ bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 
 ###
 
-<h3 align="left">Step 7 : question of removing previous crown jobs</h3>
+<h3 align="left">Step 6 : question of removing previous crown jobs</h3>
 
 ###
 
@@ -98,7 +91,7 @@ bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 
 ###
 
-<p align="left">I used the translator and if I have gramme problem please help me to improve it<br>Also, I have tested this script only on Ubuntu and developers can help us to develop this script for other operating systems.</p>
+<p align="left">I used the translator and if I have grammer problem please help me to improve it<br>Also, I have tested this script only on Ubuntu and developers can help us to develop this script for other operating systems.</p>
 
 ###
 
