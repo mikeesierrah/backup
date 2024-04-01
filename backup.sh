@@ -1,27 +1,13 @@
 #!/bin/bash
 
 # Bot token
-# گرفتن توکن ربات از کاربر و ذخیره آن در متغیر tk
-while [[ -z "$tk" ]]; do
-    echo "Bot token: "
-    read -r tk
-    if [[ $tk == $'\0' ]]; then
+# گرفتن وبهوک از کاربر و ذخیره آن در متغیر webhook
+while [[ -z "$webhook" ]]; do
+    echo "Discord Webhook: "
+    read -r webhook
+    if [[ $webhook == $'\0' ]]; then
         echo "Invalid input. Token cannot be empty."
-        unset tk
-    fi
-done
-
-# Chat id
-# گرفتن Chat ID از کاربر و ذخیره آن در متغیر chatid
-while [[ -z "$chatid" ]]; do
-    echo "Chat id: "
-    read -r chatid
-    if [[ $chatid == $'\0' ]]; then
-        echo "Invalid input. Chat id cannot be empty."
-        unset chatid
-    elif [[ ! $chatid =~ ^\-?[0-9]+$ ]]; then
-        echo "${chatid} is not a number."
-        unset chatid
+        unset webhook
     fi
 done
 
@@ -201,7 +187,7 @@ trim() {
 }
 
 IP=$(ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p')
-caption="${caption}\n\n${ACLover}\n<code>${IP}</code>\nCreated by @AC_Lover - https://github.com/AC-Lover/backup"
+caption="${caption}\n\n${ACLover}\n<code>${IP}</code>\nEdited by @MikeESierraH forked from https://github.com/AC-Lover/backup"
 comment=$(echo -e "$caption" | sed 's/<code>//g;s/<\/code>//g')
 comment=$(trim "$comment")
 
@@ -209,13 +195,13 @@ comment=$(trim "$comment")
 # نصب پکیج zip
 sudo apt install zip -y
 
-# send backup to telegram
-# ارسال فایل پشتیبانی به تلگرام
+# send backup to discord
+# ارسال فایل پشتیبانی به دیسکورد
 cat > "/root/ac-backup-${xmh}.sh" <<EOL
 rm -rf /root/ac-backup-${xmh}.zip
 $ZIP
 echo -e "$comment" | zip -z /root/ac-backup-${xmh}.zip
-curl -F chat_id="${chatid}" -F caption=\$'${caption}' -F parse_mode="HTML" -F document=@"/root/ac-backup-${xmh}.zip" https://api.telegram.org/bot${tk}/sendDocument
+curl -X POST -H "Content-Type: multipart/form-data" -F "content=${caption}" -F "file=@"/root/ac-backup-${xmh}.zip" ${webhook}
 EOL
 
 
