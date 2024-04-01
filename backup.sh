@@ -201,7 +201,7 @@ cat > "/root/ac-backup-${xmh}.sh" <<EOL
 rm -rf /root/ac-backup-${xmh}.zip
 $ZIP
 echo -e "$comment" | zip -z /root/ac-backup-${xmh}.zip
-curl -X POST -H "Content-Type: multipart/form-data" -F "payload_json={\"content\": \${caption}\"}" -F "file=@"/root/ac-backup-${xmh}.zip" ${webhook}
+curl -X POST -H "Content-Type: multipart/form-data" -F "payload_json={\"content\": \"${caption}\"}" -F "file=@"/root/ac-backup-${xmh}.zip" ${webhook}
 EOL
 
 
