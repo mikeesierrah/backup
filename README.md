@@ -12,7 +12,7 @@
 
 ###
 
-<p align="left">With this script, you can backup important information such as database from the x-ui, marzban, and hiddify panels and send it to Discord with the help of the Telegram bot so that it is always available!</p>
+<p align="left">With this script, you can backup important information such as database from the x-ui, marzban, and hiddify panels and send it to Discord so that it is always available!</p>
 
 ###
 
