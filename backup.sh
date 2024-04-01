@@ -67,12 +67,12 @@ done
 
 if [[ "$crontabs" == "y" ]]; then
 # remove cronjobs
-sudo crontab -l | grep -vE '/root/ac-backup.+\.sh' | crontab -
+sudo crontab -l | grep -vE '/root/ms-backup.+\.sh' | crontab -
 fi
 
 
 # m backup
-# ساخت فایل پشتیبانی برای نرم‌افزار Marzban و ذخیره آن در فایل ac-backup.zip
+# ساخت فایل پشتیبانی برای نرم‌افزار Marzban و ذخیره آن در فایل ms-backup.zip
 if [[ "$xmh" == "m" ]]; then
 
 if dir=$(find /opt /root -type d -iname "marzban" -print -quit); then
@@ -89,7 +89,7 @@ if [ -d "/var/lib/marzban/mysql" ]; then
   docker exec marzban-mysql-1 bash -c "mkdir -p /var/lib/mysql/db-backup"
   source /opt/marzban/.env
 
-    cat > "/var/lib/marzban/mysql/ac-backup.sh" <<EOL
+    cat > "/var/lib/marzban/mysql/ms-backup.sh" <<EOL
 #!/bin/bash
 
 USER="root"
@@ -107,24 +107,24 @@ for db in \$databases; do
 done
 
 EOL
-chmod +x /var/lib/marzban/mysql/ac-backup.sh
+chmod +x /var/lib/marzban/mysql/ms-backup.sh
 
 ZIP=$(cat <<EOF
-docker exec marzban-mysql-1 bash -c "/var/lib/mysql/ac-backup.sh"
-zip -r /root/ac-backup-m.zip /opt/marzban/* /var/lib/marzban/* /opt/marzban/.env -x /var/lib/marzban/mysql/\*
-zip -r /root/ac-backup-m.zip /var/lib/marzban/mysql/db-backup/*
+docker exec marzban-mysql-1 bash -c "/var/lib/mysql/ms-backup.sh"
+zip -r /root/ms-backup-m.zip /opt/marzban/* /var/lib/marzban/* /opt/marzban/.env -x /var/lib/marzban/mysql/\*
+zip -r /root/ms-backup-m.zip /var/lib/marzban/mysql/db-backup/*
 rm -rf /var/lib/marzban/mysql/db-backup/*
 EOF
 )
 
     else
-      ZIP="zip -r /root/ac-backup-m.zip ${dir}/* /var/lib/marzban/* /opt/marzban/.env"
+      ZIP="zip -r /root/ms-backup-m.zip ${dir}/* /var/lib/marzban/* /opt/marzban/.env"
 fi
 
-ACLover="marzban backup"
+
 
 # x-ui backup
-# ساخت فایل پشتیبانی برای نرم‌افزار X-UI و ذخیره آن در فایل ac-backup.zip
+# ساخت فایل پشتیبانی برای نرم‌افزار X-UI و ذخیره آن در فایل ms-backup.zip
 elif [[ "$xmh" == "x" ]]; then
 
 if dbDir=$(find /etc /opt/freedom -type d -iname "x-ui*" -print -quit); then
@@ -144,11 +144,11 @@ else
   exit 1
 fi
 
-ZIP="zip /root/ac-backup-x.zip ${dbDir}/x-ui.db ${configDir}/config.json"
-ACLover="x-ui backup"
+ZIP="zip /root/ms-backup-x.zip ${dbDir}/x-ui.db ${configDir}/config.json"
+
 
 # hiddify backup
-# ساخت فایل پشتیبانی برای نرم‌افزار Hiddify و ذخیره آن در فایل ac-backup.zip
+# ساخت فایل پشتیبانی برای نرم‌افزار Hiddify و ذخیره آن در فایل ms-backup.zip
 elif [[ "$xmh" == "h" ]]; then
 
 if ! find /opt/hiddify-manager/hiddify-panel/ -type d -iname "backup" -print -quit; then
@@ -164,12 +164,12 @@ fi
 python3 -m hiddifypanel backup
 cd /opt/hiddify-manager/hiddify-panel/backup
 latest_file=\$(ls -t *.json | head -n1)
-rm -f /root/ac-backup-h.zip
-zip /root/ac-backup-h.zip /opt/hiddify-manager/hiddify-panel/backup/\$latest_file
+rm -f /root/ms-backup-h.zip
+zip /root/ms-backup-h.zip /opt/hiddify-manager/hiddify-panel/backup/\$latest_file
 
 EOF
 )
-ACLover="hiddify backup"
+
 else
 echo "Please choose m or x or h only !"
 exit 1
@@ -197,22 +197,22 @@ sudo apt install zip -y
 
 # send backup to discord
 # ارسال فایل پشتیبانی به دیسکورد
-cat > "/root/ac-backup-${xmh}.sh" <<EOL
-rm -rf /root/ac-backup-${xmh}.zip
+cat > "/root/ms-backup-${xmh}.sh" <<EOL
+rm -rf /root/ms-backup-${xmh}.zip
 $ZIP
-echo -e "$comment" | zip -z /root/ac-backup-${xmh}.zip
-curl -X POST -H "Content-Type: multipart/form-data" -F "content=$caption" -F "file=@/root/ac-backup-${xmh}.zip" $webhook
+echo -e "$comment" | zip -z /root/ms-backup-${xmh}.zip
+curl -X POST -H "Content-Type: multipart/form-data" -F "content=$caption" -F "file=@/root/ms-backup-${xmh}.zip" $webhook
 
 EOL
 
 
 # Add cronjob
 # افزودن کرانجاب جدید برای اجرای دوره‌ای این اسکریپت
-{ crontab -l -u root; echo "${cron_time} /bin/bash /root/ac-backup-${xmh}.sh >/dev/null 2>&1"; } | crontab -u root -
+{ crontab -l -u root; echo "${cron_time} /bin/bash /root/ms-backup-${xmh}.sh >/dev/null 2>&1"; } | crontab -u root -
 
 # run the script
 # اجرای این اسکریپت
-bash "/root/ac-backup-${xmh}.sh"
+bash "/root/ms-backup-${xmh}.sh"
 
 # Done
 # پایان اجرای اسکریپت

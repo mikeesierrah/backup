@@ -12,7 +12,7 @@
 
 ###
 
-<p align="right">با این اسکریپت می توانید از پنل های x-ui، marzban و hiddify از اطلاعات مهمی مانند دیتابیس بکاپ بگیرید و با کمک ربات تلگرام به تلگرام ارسال کنید تا همیشه در دسترس باشد!</p>
+<p align="right">با این اسکریپت می توانید از پنل های x-ui، marzban و hiddify از اطلاعات مهمی مانند دیتابیس بکاپ بگیرید و به دیسکورد ارسال کنید تا همیشه در دسترس باشد!</p>
 
 ###
 
@@ -33,28 +33,21 @@
 <p align="right">ابتدا این دستور را روی سرور خود اجرا می کنید</p>
   
 ```bash
-bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
+bash <(curl -Ls https://github.com/mikeesierrah/backup/raw/main/backup.sh)
 ``` 
 
 ###
 
-<h3 align="right">قدم دوم : تنظیم توکن</h3>
+<h3 align="right">قدم دوم : تنظیم وب هوک</h3>
 
 ###
 
-<p align="right">سپس از ما توکن ربات می خواهد، شما باید یک ربات از https://t.me/BotFather بسازید و توکن را بدهید.</p>
+<p align="right"> حال شما باید وب هوک دیسکورد خود را وارد کنید - برای راهنمای گرفتن وب هوک دیسکورد از گوگل کمک بگیرید</p>
 
 ###
 
-<h3 align="right">قدم سوم : تنظیم چت آیدی</h3>
 
-###
-
-<p align="right">سپس از ما یک چت آیدی می‌خواهد و برای دریافت چت آیدی یا کانالی که برای پشتیبان‌گیری اختصاص داده‌اید، باید یک پیام از خود یا کانال به این ربات https://t.me/userinfobot فوروارد کنید که این ربات چت آیدی را بهتون بده</p>
-
-###
-
-<h3 align="right">قدم چهارم : تنظیم کپشن</h3>
+<h3 align="right">قدم سوم : تنظیم کپشن</h3>
 
 ###
 
@@ -62,7 +55,7 @@ bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 
 ###
 
-<h3 align="right">قدم پنجم : تنظیم کرون جاب</h3>
+<h3 align="right">قدم چهارم : تنظیم کرون جاب</h3>
 
 ###
 
@@ -70,7 +63,7 @@ bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 
 ###
 
-<h3 align="right">قدم ششم : انتخاب پنل</h3>
+<h3 align="right">قدم پنجم : انتخاب پنل</h3>
 
 ###
 
@@ -78,7 +71,7 @@ bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 
 ###
 
-<h3 align="right">قدم هفتم : حذف کرون جاب های قبلی</h3>
+<h3 align="right">قدم شیشم : حذف کرون جاب های قبلی</h3>
 
 ###
 
@@ -98,11 +91,11 @@ bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 
 ###
 
-<p align="right">من این اسکریپت را فقط بر روی اوبونتو تست کرده ام و توسعه دهندگان می توانند در توسعه این اسکریپت برای سایر سیستم عامل ها به ما کمک کنند</p>
+<p align="right">من این پروژه را از پروژه اصلی فورک کرده ام که بجای تلگرام به دیسکورد بفرستد اگه خوشتون اومد ستاره بدین و توسعه دهنده اصلی پروژه رو حمایت کنید</p>
 
 ###
 
-<h1 align="right">حمایت از ما</h1>
+<h1 align="right">حمایت از توسعه دهنده اصلی</h1>
 
 ###
 
@@ -110,10 +103,7 @@ bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 
 ###
 
-<h1 align="right">ویدئو آموزشی</h1>
-
-https://github.com/AC-Lover/backup/assets/49290111/905c545c-caa9-4ad5-80d1-82c702fb3f2e
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/AC-Lover/backup.svg)](https://starchart.cc/AC-Lover/backup)
+[![Stargazers over time](https://starchart.cc/mikeesierrah/backup.svg)](https://starchart.cc/mikeesierrah/backup)

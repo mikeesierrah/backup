@@ -12,7 +12,7 @@
 
 ###
 
-<p align="left">With this script, you can backup important information such as database from the x-ui, marzban, and hiddify panels and send it to Telegram with the help of the Telegram bot so that it is always available!</p>
+<p align="left">With this script, you can backup important information such as database from the x-ui, marzban, and hiddify panels and send it to Discord with the help of the Telegram bot so that it is always available!</p>
 
 ###
 
@@ -42,7 +42,7 @@ bash <(curl -Ls https://github.com/mikeesierrah/backup/raw/main/backup.sh)
 
 ###
 
-<p align="left">Then it asks us for Webhook/p>
+<p align="left">Then it asks us for Webhook - if you dont know how to get Discord webhook just say Google it</p>
 
 
 ###
@@ -87,11 +87,11 @@ bash <(curl -Ls https://github.com/mikeesierrah/backup/raw/main/backup.sh)
 
 ###
 
-<h1 align="left">Help us</h1>
+<h1 align="left">Help the original Developer</h1>
 
 ###
 
-<p align="left">I used the translator and if I have grammer problem please help me to improve it<br>Also, I have tested this script only on Ubuntu and developers can help us to develop this script for other operating systems.</p>
+<p align="left">this is just a fork i made that sends the backup to Discord instead of telegram - if you like it give me a star and Donate to the original developer </p>
 
 ###
 
@@ -103,12 +103,8 @@ bash <(curl -Ls https://github.com/mikeesierrah/backup/raw/main/backup.sh)
 
 ###
 
-<h1 align="left">Video tutorial</h1>
-
-https://github.com/AC-Lover/backup/assets/49290111/905c545c-caa9-4ad5-80d1-82c702fb3f2e
-
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/AC-Lover/backup.svg)](https://starchart.cc/AC-Lover/backup)
+[![Stargazers over time](https://starchart.cc/mikeesierrah/backup.svg)](https://starchart.cc/mikeesierrah/backup)
 
