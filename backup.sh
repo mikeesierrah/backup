@@ -113,7 +113,7 @@ ZIP=$(cat <<EOF
 docker exec marzban-mysql-1 bash -c "/var/lib/mysql/ms-backup.sh"
 zip -r /root/ms-backup-m.zip /opt/marzban/* /var/lib/marzban/* /opt/marzban/.env -x /var/lib/marzban/mysql/\*
 zip -r /root/ms-backup-m.zip /var/lib/marzban/mysql/db-backup/*
-zip -r /root/ms-backup-m.zip /etc/haproxy/* etc/nginx/*
+zip -r /root/ms-backup-m.zip /etc/haproxy/* /etc/nginx/*
 rm -rf /var/lib/marzban/mysql/db-backup/*
 EOF
 )
